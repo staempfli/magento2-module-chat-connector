@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Staempfli
+ * @package   Staempfli_ChatConnector
+ * @copyright Copyright © Stämpfli AG. All rights reserved.
+ * @author    marcel.hauri@staempfli.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="chatconnector_process_queued" instance="Staempfli\ChatConnector\Cron\ProcessQueuedMessages" method="execute">
+            <schedule>* * * * *</schedule>
+        </job>
+        <job name="chatconnector_remove_processed" instance="Staempfli\ChatConnector\Cron\RemoveProcessedMessages" method="execute">
+            <schedule>*/5 * * * *</schedule>
+        </job>
+    </group>
+</config>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Staempfli
+ * @package   Staempfli_ChatConnector
+ * @copyright Copyright © Stämpfli AG. All rights reserved.
+ * @author    marcel.hauri@staempfli.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <chatconnector>
+            <general>
+                <enabled>0</enabled>
+                <queue>1</queue>
+                <notifications>failed_admin_user_login,admin_user_save,sales_new_order</notifications>
+            </general>
+            <notifications>
+                <failed_admin_user_login>
+                    <description>Admin: Failed User Login Attempts</description>
+                    <class>Staempfli\ChatConnector\Events\Admin\AdminUserAuthenticate</class>
+                </failed_admin_user_login>
+                <admin_user_save>
+                    <description>Admin: New User Created</description>
+                    <class>Staempfli\ChatConnector\Events\Admin\AdminUserSave</class>
+                </admin_user_save>
+                <sales_new_order>
+                    <description>Sales: New Order</description>
+                    <class>Staempfli\ChatConnector\Events\Sales\SalesNewOrder</class>
+                </sales_new_order>
+            </notifications>
+        </chatconnector>
+    </default>
+</config>

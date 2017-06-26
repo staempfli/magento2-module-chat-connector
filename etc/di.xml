@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Staempfli
+ * @package   Staempfli_ChatConnector
+ * @copyright Copyright © Stämpfli AG. All rights reserved.
+ * @author    marcel.hauri@staempfli.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Staempfli\ChatConnector\Api\Data\MessageInterface" type="Staempfli\ChatConnector\Model\Message" />
+    <preference for="Staempfli\ChatConnector\Api\MessageManagementInterface" type="Staempfli\ChatConnector\Model\MessageManagement" />
+</config>
