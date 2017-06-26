@@ -1,0 +1,2 @@
+# magento2-module-chat-connector
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7ae4f1a2e4004426851601f96cae7147)](https://www.codacy.com/app/Staempfli/magento2-module-chat-connector?utm_source=github.com&utm_medium=referral&utm_content=staempfli/magento2-module-chat-connector&utm_campaign=badger)
