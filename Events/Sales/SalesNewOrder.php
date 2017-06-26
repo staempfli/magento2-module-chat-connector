@@ -37,10 +37,20 @@ class SalesNewOrder extends Events implements ObserverInterface
      */
     private function getCustomerName($order)
     {
+        $customerName = '';
+
+        if ($order->getBillingAddress()) {
+            $customerName = sprintf('%s %s',
+                $order->getBillingAddress()->getFirstname(),
+                $order->getBillingAddress()->getLastname()
+            );
+        }
+
         if ($order->getCustomerFirstname()) {
-            $customerName = $order->getCustomerFirstname() . ' ' . $order->getCustomerLastname();
-        } else {
-            $customerName = $order->getBillingAddress()->getFirstname() . ' ' . $order->getBillingAddress()->getLastname();
+            $customerName = sprintf('%s %s',
+                $order->getCustomerFirstname(),
+                $order->getCustomerLastname()
+            );
         }
 
         if ($order->getCustomerIsGuest()) {
