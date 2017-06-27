@@ -12,13 +12,14 @@ use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 class Collection extends AbstractCollection
 {
     /**
+     * @SuppressWarnings(PHPMD.CamelCasePropertyName)
      * @var string
      */
     protected $_idFieldName = 'entity_id';
 
     /**
      * Define resource model
-     *
+     * @SuppressWarnings(PHPMD.CamelCaseMethodName)
      * @return void
      */
     protected function _construct()

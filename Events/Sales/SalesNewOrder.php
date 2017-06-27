@@ -22,7 +22,7 @@ class SalesNewOrder extends Events implements ObserverInterface
     {
         $order = $observer->getOrder();
         $this->notify(__(
-            "<strong>A new order has been placed.</strong>\n<strong>Order ID:</strong> %1\n<strong>Name:</strong> %2\n<strong>Subtotal:</strong> %3\n<strong>Shipping & Handling:</strong> %4\n <strong>Grand Total:</strong> %5",
+            "<strong>A new order has been placed.</strong>\n<strong>Order ID:</strong> %1\n<strong>Name:</strong> %2\n<strong>Subtotal:</strong> %3\n<strong>Shipping & Handling:</strong> %4\n <strong>Grand Total:</strong> %5", // @codingStandardsIgnoreLine
             $order->getIncrementId(),
             $this->getCustomerName($order),
             $order->formatPrice($order->getBaseSubtotalInclTax()),

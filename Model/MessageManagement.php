@@ -45,14 +45,14 @@ class MessageManagement implements MessageManagementInterface
 
     /**
      * @param MessageInterface $message
+     * @return bool
      */
     public function send(MessageInterface $message)
     {
         if ($this->config->useQueue()) {
-            $this->queue->addMessageToQueue($message->getMessageData(), $message->getRequestData());
-        } else {
-            $this->sendRequest($message->getRequestData(), $message->getMessageData());
+            return $this->queue->addMessageToQueue($message->getMessageData(), $message->getRequestData());
         }
+        return $this->sendRequest($message->getRequestData(), $message->getMessageData());
     }
 
     /**

@@ -24,7 +24,7 @@ class AdminUserSave extends Events implements ObserverInterface
             $adminUser = $observer->getData('object');
             if (!$adminUser->getCreated()) {
                 $this->notify(__(
-                    "<strong>New Admin User was created!</strong>\n Username: %1 \n First Name: %2 \n Last Name: %3 \n E-Mail: %4",
+                    "<strong>New Admin User was created!</strong>\n Username: %1 \n First Name: %2 \n Last Name: %3 \n E-Mail: %4", // @codingStandardsIgnoreLine
                     $adminUser->getUsername(),
                     $adminUser->getFirtname(),
                     $adminUser->getLastname(),

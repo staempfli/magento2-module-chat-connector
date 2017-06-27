@@ -23,13 +23,14 @@ class Queue extends AbstractModel implements IdentityInterface
     const CACHE_TAG = 'chatconnector_queue';
 
     /**
+     * @SuppressWarnings(PHPMD.CamelCasePropertyName)
      * @var string
      */
     protected $_cacheTag = 'chatconnector_queue';
 
     /**
      * Prefix of model events names
-     *
+     * @SuppressWarnings(PHPMD.CamelCasePropertyName)
      * @var string
      */
     protected $_eventPrefix = 'chatconnector_queue';
@@ -79,13 +80,19 @@ class Queue extends AbstractModel implements IdentityInterface
     /**
      * @param array $messageData
      * @param array $requestData
+     * @return bool
      */
     public function addMessageToQueue(array $messageData, array $requestData)
     {
-        $this->unsetData()
-            ->setMessageData(json_encode($messageData))
-            ->setRequestData(json_encode($requestData))
-            ->save();
+        try {
+            $this->unsetData()
+                ->setMessageData(json_encode($messageData))
+                ->setRequestData(json_encode($requestData))
+                ->save();
+            return true;
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 
     public function removeProcessedMessages()

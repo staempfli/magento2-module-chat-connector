@@ -11,11 +11,19 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 class Queue extends AbstractDb
 {
+    /**
+     * @SuppressWarnings(PHPMD.CamelCaseMethodName)
+     */
     protected function _construct()
     {
         $this->_init('chatconnector_queue', 'entity_id');
     }
 
+    /**
+     * @param \Magento\Framework\Model\AbstractModel $object
+     * @return $this
+     * @SuppressWarnings(PHPMD.CamelCaseMethodName)
+     */
     protected function _beforeSave(\Magento\Framework\Model\AbstractModel $object)
     {
         if ($object->isObjectNew()) {

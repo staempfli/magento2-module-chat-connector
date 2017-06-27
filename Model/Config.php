@@ -38,7 +38,10 @@ class Config
      */
     public function isActive()
     {
-        return (boolean) $this->scopeConfig->getValue(self::XML_PATH_ENABLED, ScopeInterface::SCOPE_STORE);
+        return (boolean) $this->scopeConfig->getValue(
+            self::XML_PATH_ENABLED,
+            ScopeInterface::SCOPE_STORE
+        );
     }
 
     /**
@@ -46,7 +49,10 @@ class Config
      */
     public function useQueue()
     {
-        return (boolean) $this->scopeConfig->getValue(self::XML_PATH_USE_QUEUE, ScopeInterface::SCOPE_STORE);
+        return (boolean) $this->scopeConfig->getValue(
+            self::XML_PATH_USE_QUEUE,
+            ScopeInterface::SCOPE_STORE
+        );
     }
 
     /**
@@ -54,16 +60,23 @@ class Config
      */
     public function getAvailableNotifications()
     {
-        return $this->scopeConfig->getValue(self::XML_PATH_CHAT_CONNECTOR_NOTIFICATIONS, ScopeInterface::SCOPE_STORE);
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_CHAT_CONNECTOR_NOTIFICATIONS,
+            ScopeInterface::SCOPE_STORE
+        );
     }
 
     /**
+     * @SuppressWarnings(PHPMD.LongVariable)
      * @return array
      */
     public function getActiveNotifications()
     {
         $data = [];
-        $activeNotifications = $this->scopeConfig->getValue(self::XML_PATH_CHAT_CONNECTOR_ACTIVE_NOTIFICATIONS, ScopeInterface::SCOPE_STORE);
+        $activeNotifications = $this->scopeConfig->getValue(
+            self::XML_PATH_CHAT_CONNECTOR_ACTIVE_NOTIFICATIONS,
+            ScopeInterface::SCOPE_STORE
+        );
         $availableNotifications = $this->getAvailableNotifications();
         $notifications = explode(',', trim($activeNotifications));
         foreach ($notifications as $notification) {
