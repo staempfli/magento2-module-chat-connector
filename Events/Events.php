@@ -3,8 +3,6 @@
 namespace Staempfli\ChatConnector\Events;
 
 use Magento\Framework\Event\ManagerInterface;
-use Magento\Framework\App\Config\ScopeConfigInterface;
-use Staempfli\ChatConnector\Model\Config;
 
 /**
  * @category  Staempfli
@@ -18,22 +16,15 @@ abstract class Events
      * @var ManagerInterface
      */
     private $eventManager;
-    /**
-     * @var Config
-     */
-    private $config;
 
     /**
      * Events constructor.
      * @param ManagerInterface $eventManager
-     * @param Config $config
      */
     public function __construct(
-        ManagerInterface $eventManager,
-        Config $config
+        ManagerInterface $eventManager
     ) {
         $this->eventManager = $eventManager;
-        $this->config = $config;
     }
 
     /**
@@ -41,13 +32,12 @@ abstract class Events
      */
     public function notify(string $message)
     {
-        if ($this->config->isNotificationAllowed($this)) {
-            $this->eventManager->dispatch(
-                'chatconnector_notification',
-                [
-                    'message' => $message,
-                ]
-            );
-        }
+        $this->eventManager->dispatch(
+            'chatconnector_notification',
+            [
+                'event' => $this,
+                'message' => $message,
+            ]
+        );
     }
 }

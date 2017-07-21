@@ -23,6 +23,10 @@ class Message implements MessageInterface
      */
     private $messageData = [];
     /**
+     * @var string
+     */
+    private $event = '';
+    /**
      * @param string $url
      * @return $this
      */
@@ -78,5 +82,28 @@ class Message implements MessageInterface
     public function getMessageData()
     {
         return $this->messageData;
+    }
+
+    /**
+     * @param string|object $event
+     * @return $this
+     */
+    public function setEvent($event)
+    {
+        $this->event = $event;
+
+        if (is_object($event)) {
+            $this->event = get_class($event);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEvent()
+    {
+        return $this->event;
     }
 }

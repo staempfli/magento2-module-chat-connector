@@ -90,13 +90,13 @@ class Config
     }
 
     /**
-     * @param Events $event
+     * @param string $event
      * @return bool
      */
-    public function isNotificationAllowed(Events $event)
+    public function isNotificationAllowed(string $event)
     {
         $activeNotifications = $this->getActiveNotifications();
-        if (in_array(get_class($event), array_values($activeNotifications))) {
+        if (in_array($event, array_values($activeNotifications))) {
             return true;
         }
         return false;

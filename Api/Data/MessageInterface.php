@@ -37,6 +37,12 @@ interface MessageInterface
     public function setMessageData(array $messageData);
 
     /**
+     * @param string|object $event
+     * @return $this
+     */
+    public function setEvent($event);
+
+    /**
      * @return array
      */
     public function getRequestData();
@@ -45,4 +51,9 @@ interface MessageInterface
      * @return array
      */
     public function getMessageData();
+
+    /**
+     * @return string
+     */
+    public function getEvent();
 }
