@@ -1,3 +1,3 @@
-"<strong>Admin user login failed!</strong>\n Username: [%1] \n Password: [%2]","<strong>Admin user login failed!</strong>\n Username: [%1] \n Password: [%2]"
+"<strong>Admin user login failed!</strong>\n Username: %1 \n Password: %2 \n IP: %3","<strong>Admin user login failed!</strong>\n Username: %1 \n Password: %2 \n IP: %3"
 "<strong>New Admin User was created!</strong>\n Username: %1 \n First Name: %2 \n Last Name: %3 \n E-Mail: %4","<strong>New Admin User was created!</strong>\n Username: %1 \n First Name: %2 \n Last Name: %3 \n E-Mail: %4"
 "<strong>A new order has been placed.</strong>\n<strong>Order ID:</strong> %1\n<strong>Name:</strong> %2\n<strong>Subtotal:</strong> %3\n<strong>Shipping & Handling:</strong> %4\n <strong>Grand Total:</strong> %5","<strong>A new order has been placed.</strong>\n<strong>Order ID:</strong> %1\n<strong>Name:</strong> %2\n<strong>Subtotal:</strong> %3\n<strong>Shipping & Handling:</strong> %4\n <strong>Grand Total:</strong> %5"
