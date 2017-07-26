@@ -29,17 +29,15 @@ class MessageManagement implements MessageManagementInterface
     /**
      * Message constructor.
      * @param Queue $queue
-     * @param Client $client
      * @param Config $config
      * @internal param Queue $queue
      */
     public function __construct(
         Queue $queue,
-        Client $client,
         Config $config
     ) {
         $this->queue = $queue;
-        $this->client = $client;
+        $this->client = new Client([]);
         $this->config = $config;
     }
 
