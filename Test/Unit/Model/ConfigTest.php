@@ -7,9 +7,16 @@
  */
 namespace Staempfli\ChatConnector\Test\Unit\Model;
 
+use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager as ObjectManagerHelper;
+use PHPUnit\Framework\TestCase;
+use Staempfli\ChatConnector\Model\Config;
 
-class ConfigTest extends \PHPUnit_Framework_TestCase
+/**
+ * Class ConfigTest
+ * @package Staempfli\ChatConnector\Test\Unit\Model
+ */
+class ConfigTest extends TestCase
 {
     private $objectManagerHelper;
     private $scopeConfigInterface;
@@ -17,11 +24,11 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->scopeConfigInterface = $this->getMockBuilder('Magento\Framework\App\Config\ScopeConfigInterface')
+        $this->scopeConfigInterface = $this->getMockBuilder(ScopeConfigInterface::class)
             ->getMockForAbstractClass();
         $this->objectManagerHelper = new ObjectManagerHelper($this);
         $this->config = $this->objectManagerHelper->getObject(
-            'Staempfli\ChatConnector\Model\Config',
+            Config::class,
             [
                 'scopeConfig' => $this->scopeConfigInterface,
             ]
