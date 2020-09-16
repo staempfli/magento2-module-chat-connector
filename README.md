@@ -2,6 +2,7 @@
 
 Magento 2 Module to send Notifications to a Webhook API.
 
+[![Project Status: Abandoned – Initial development has started, but there has not yet been a stable, usable release; the project has been abandoned and the author(s) do not intend on continuing development.](http://www.repostatus.org/badges/latest/abandoned.svg)](http://www.repostatus.org/#abandoned)
 [![Codacy](https://api.codacy.com/project/badge/Grade/7ae4f1a2e4004426851601f96cae7147)](https://www.codacy.com/app/Staempfli/magento2-module-chat-connector?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=staempfli/magento2-module-chat-connector&amp;utm_campaign=Badge_Grade)
 [![Code Climate](https://codeclimate.com/github/staempfli/magento2-module-chat-connector/badges/gpa.svg)](https://codeclimate.com/github/staempfli/magento2-module-chat-connector)
 [![Issue Count](https://codeclimate.com/github/staempfli/magento2-module-chat-connector/badges/issue_count.svg)](https://codeclimate.com/github/staempfli/magento2-module-chat-connector)
