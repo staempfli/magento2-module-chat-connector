@@ -2,7 +2,7 @@
   "name": "staempfli/magento2-module-chat-connector",
   "description": "Magento 2 Chat Connector required for HipChat and Slack Module",
   "require": {
-    "php": "~7.0.0",
+    "php": "~7.0.0|~7.1.0|~7.2.0",
     "guzzlehttp/guzzle": "~6.2"
   },
   "type": "magento2-module",
